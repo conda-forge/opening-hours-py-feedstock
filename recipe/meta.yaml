@@ -9,7 +9,7 @@ source:
   sha256: 164cc1eff13231c8c157c685e75be758f074415360115139bcaa019cc1904b85
 
 build:
-  number: 1
+  number: 2
   script:
     - export PYO3_PYTHON="{{ PYTHON }}"  # [not win]
     - set PYO3_PYTHON="{{ PYTHON }}"  # [win]
