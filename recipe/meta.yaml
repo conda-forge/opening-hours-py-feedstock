@@ -1,4 +1,4 @@
-{% set version = "2.1.3" %}
+{% set version = "2.1.4" %}
 
 package:
   name: opening-hours-py
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/o/opening-hours-py/opening_hours_py-{{ version }}.tar.gz
-  sha256: 6c780ce4ff68de9f5f2136b0358dc7635accfa2b50ef3e4d0ae6dfc5b0ee484c
+  sha256: d81e43909b89aaaa8a946024540bbae523d028be5e81f789b88216e1ce44117a
 
 build:
   number: 0
