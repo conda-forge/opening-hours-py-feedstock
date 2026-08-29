@@ -1,27 +1,32 @@
-{% set version = "2.1.4" %}
+schema_version: 1
+
+context:
+  version: "2.1.4"
 
 package:
   name: opening-hours-py
-  version: {{ version }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/o/opening-hours-py/opening_hours_py-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/o/opening-hours-py/opening_hours_py-${{ version }}.tar.gz
   sha256: d81e43909b89aaaa8a946024540bbae523d028be5e81f789b88216e1ce44117a
 
 build:
   number: 0
   script:
-    - export PYO3_PYTHON="{{ PYTHON }}"  # [not win]
-    - set PYO3_PYTHON="{{ PYTHON }}"  # [win]
+    - if: not win
+      then: export PYO3_PYTHON="${{ PYTHON }}"
+    - if: win
+      then: set PYO3_PYTHON="${{ PYTHON }}"
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
-    - maturin build --release -i "{{ PYTHON }}"
-    - "{{ PYTHON }} -m pip install opening-hours-py --no-index --find-links=target/wheels --no-deps -vv"
+    - maturin build --release -i "${{ PYTHON }}"
+    - ${{ PYTHON }} -m pip install opening-hours-py --no-index --find-links=target/wheels --no-deps -vv
 
 requirements:
   build:
-    - {{ stdlib("c") }}
-    - {{ compiler("c") }}
-    - {{ compiler("rust") }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler("c") }}
+    - ${{ compiler("rust") }}
     - cargo-bundle-licenses
   host:
     - python
@@ -32,17 +37,13 @@ requirements:
   run:
     - python
 
-test:
-  imports:
-    - opening_hours
-  commands:
-    - pip check
-  requires:
-    - pip
-    - python
+tests:
+  - python:
+      imports:
+        - opening_hours
+      pip_check: true
 
 about:
-  home: https://github.com/remi-dupre/opening-hours-rs/tree/master/opening-hours-py
   summary: A parser and toolkit for the opening_hours in OpenStreetMap written in Rust.
   license: MIT AND Apache-2.0
   license_file:
@@ -53,6 +54,7 @@ about:
     - opening-hours-py/LICENSE-MIT
     - opening-hours-syntax/LICENSE-APACHE
     - opening-hours-syntax/LICENSE-MIT
+  homepage: https://github.com/remi-dupre/opening-hours-rs/tree/master/opening-hours-py
 
 extra:
   recipe-maintainers:
