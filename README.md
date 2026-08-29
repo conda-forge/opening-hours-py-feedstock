@@ -68,41 +68,6 @@ Current build status
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/opening-hours-py-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.14.____cp314" alt="variant">
                 </a>
               </td>
-            </tr><tr>
-              <td>win_64_python3.10.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27926&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/opening-hours-py-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.10.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_python3.11.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27926&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/opening-hours-py-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.11.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_python3.12.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27926&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/opening-hours-py-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.12.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_python3.13.____cp313</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27926&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/opening-hours-py-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.13.____cp313" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_python3.14.____cp314</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27926&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/opening-hours-py-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.14.____cp314" alt="variant">
-                </a>
-              </td>
             </tr>
           </tbody>
         </table>
@@ -128,31 +93,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `opening-hours-py` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install opening-hours-py
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install opening-hours-py
 ```
 
-It is possible to list all of the versions of `opening-hours-py` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add opening-hours-py
+# for installing globally
+pixi global install opening-hours-py
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `opening-hours-py` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search opening-hours-py --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search opening-hours-py --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search opening-hours-py --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -164,6 +171,8 @@ mamba repoquery whoneeds opening-hours-py --channel conda-forge
 # List dependencies of `opening-hours-py`:
 mamba repoquery depends opening-hours-py --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
@@ -233,7 +242,4 @@ Feedstock Maintainers
 =====================
 
 * [@p-vdp](https://github.com/p-vdp/)
-
-
-<!-- dummy commit to enable rerendering -->
 
