@@ -12,7 +12,7 @@ source:
   sha256: d81e43909b89aaaa8a946024540bbae523d028be5e81f789b88216e1ce44117a
 
 build:
-  number: 1
+  number: 2
   script:
     - if: not win
       then: export PYO3_PYTHON="${{ PYTHON }}"
