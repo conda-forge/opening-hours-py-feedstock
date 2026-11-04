@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "2.1.4"
+  version: "2.1.5"
 
 package:
   name: opening-hours-py
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/o/opening-hours-py/opening_hours_py-${{ version }}.tar.gz
-  sha256: d81e43909b89aaaa8a946024540bbae523d028be5e81f789b88216e1ce44117a
+  sha256: 592792b99396217454ed9e61d8667dd7e6c94c089ccea68ac5bfabf2c950787b
 
 build:
-  number: 2
+  number: 0
   script:
     - if: not win
       then: export PYO3_PYTHON="${{ PYTHON }}"
