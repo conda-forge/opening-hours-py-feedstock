@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "2.1.5"
+  version: "2.1.6"
 
 package:
   name: opening-hours-py
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/o/opening-hours-py/opening_hours_py-${{ version }}.tar.gz
-  sha256: 592792b99396217454ed9e61d8667dd7e6c94c089ccea68ac5bfabf2c950787b
+  sha256: 994006e1c6f6ec5ce9154aea86fd5dc5ed5da7804e20a042e8da3176436e9f5a
 
 build:
   number: 0
